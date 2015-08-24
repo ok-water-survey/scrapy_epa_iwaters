@@ -1,7 +1,9 @@
 from scrapy.spider import BaseSpider
 from scrapy.selector import HtmlXPathSelector
 import codecs
-from pymongo import Connection
+from 
+from pymongo import MongoClient 
+db = MongoClient()
 #db=Connection('worker.oklahomawatersurvey.org')
 #db=Connection('fire.rccc.ou.edu')
 #year='2012'
@@ -19,6 +21,7 @@ class iwaters(BaseSpider):
     allowed_domains = ["epa.gov"]
     start_urls = urls 
     def __init__(self):
+        pass
         #remove old data
         #db.ows.impaired_waters.remove()
     def parse(self, response):
